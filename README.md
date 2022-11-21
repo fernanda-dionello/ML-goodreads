@@ -9,3 +9,5 @@ Refs:
  - https://ui.autotrain.huggingface.co/21711/trainings
  - https://huggingface.co/fernanda-dionello/autotrain-goodreads_without_bookid-2171169884?text=I+love+AutoTrain+%F0%9F%A4%97
  
+ - Métricas dos models treinados no site AutoTrain:
+<img width="1150" alt="model_metrics" src="https://user-images.githubusercontent.com/74319133/203105021-9d10d664-d2eb-44b8-88df-2fa866b092f6.png">
