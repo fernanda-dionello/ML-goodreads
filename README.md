@@ -7,6 +7,8 @@
 - Informações sobre como ocorre o tratamento do dataset de test no Autotrain:
   - https://huggingface.co/docs/transformers/tasks/sequence_classification
   - https://huggingface.co/tasks/text-classification
+  - https://huggingface.co/course/chapter3/2?fw=pt
+  - https://huggingface.co/course/chapter3/3?fw=pt
 
 
 ## Refs:
