@@ -4,9 +4,9 @@
 - Abordagem no site Autotrain (Hugging Face Hub) para classificação (Task): Text Classification (Multi-class)
 - Libraries utilizadas: Transformers, Tokenizers, Pytorch, Numpy and Pandas
 
-* Informações sobre como ocorre o tratamento do dataset de test no Autotrain:
- - https://huggingface.co/docs/transformers/tasks/sequence_classification
- - https://huggingface.co/tasks/text-classification
+- Informações sobre como ocorre o tratamento do dataset de test no Autotrain:
+  - https://huggingface.co/docs/transformers/tasks/sequence_classification
+  - https://huggingface.co/tasks/text-classification
 
 
 ## Refs:
