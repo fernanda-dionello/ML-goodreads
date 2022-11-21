@@ -1,10 +1,11 @@
 # ML-goodreads
 
-- Abordagem utilizada: NLP - Natural Language processing
-- Abordagem no site Autotrain (Hugging Face Hub) para classificação (Task): Text Classification (Multi-class)
-- Libraries utilizadas: Transformers, Tokenizers, Pytorch, Numpy and Pandas
-
-- Informações sobre como ocorre o tratamento do dataset de test no Autotrain:
+- **Abordagem utilizada: NLP - Natural Language processing**
+  - O processamento de linguagem natural (NLP) é um ramo da inteligência artificial (IA) que permite aos computadores compreender, gerar e manipular a linguagem humana. O processamento de linguagem natural tem a capacidade de interrogar os dados com texto ou voz de linguagem natural. Isso também é chamado de "entrada de linguagem".  
+- **Abordagem no site Autotrain (Hugging Face Hub) para classificação (Task): Text Classification (Multi-class)**
+  - Multi-class text classification é uma tarefa de classificação de texto com mais de duas classes/categorias. Cada amostra de dados pode ser classificada em uma das classes. No entanto, uma amostra de dados não pode pertencer a mais de uma classe simultaneamente
+- **Libraries utilizadas: Transformers, Tokenizers, Pytorch, Numpy and Pandas**
+- **Informações sobre como ocorre o tratamento do dataset de test no Autotrain:**
   - https://huggingface.co/docs/transformers/tasks/sequence_classification
   - https://huggingface.co/tasks/text-classification
   - https://huggingface.co/course/chapter3/2?fw=pt
@@ -22,7 +23,7 @@
  - https://developers.google.com/machine-learning/crash-course/classification/video-lecture
 
 
-Link Dataset via Autotrain:
+**Link Dataset via Autotrain:**
 https://huggingface.co/datasets/fernanda-dionello/autotrain-data-goodreads_without_bookid
 
 <img width="806" alt="image" src="https://user-images.githubusercontent.com/74319133/203107625-a91b99d2-e900-4dfb-901c-7e6095749c57.png">
@@ -33,10 +34,10 @@ https://huggingface.co/datasets/fernanda-dionello/autotrain-data-goodreads_witho
 
 ### Conceitos relacionados as métricas:
 
-- Loss = é a penalidade para uma previsão ruim. Ou seja, loss é um número que indica quão ruim foi a previsão do modelo em um único exemplo. Se a previsão do modelo for perfeita, loss é zero; caso contrário, loss é maior. O objetivo de treinar um modelo é encontrar um conjunto de pesos e vieses que tenham baixo loss, em média, em todos os exemplos.
+- **Loss** = é a penalidade para uma previsão ruim. Ou seja, loss é um número que indica quão ruim foi a previsão do modelo em um único exemplo. Se a previsão do modelo for perfeita, loss é zero; caso contrário, loss é maior. O objetivo de treinar um modelo é encontrar um conjunto de pesos e vieses que tenham baixo loss, em média, em todos os exemplos.
 
-- Accuracy = é o cálculo de Número de predições corretas dividido pelo total de predições.
-- Precision = A precisão tenta responder à seguinte pergunta: "Qual a proporção de identificações positivas estava correta?"
+- **Accuracy** = é o cálculo de Número de predições corretas dividido pelo total de predições.
+- **Precision** = A precisão tenta responder à seguinte pergunta: "Qual a proporção de identificações positivas estava correta?"
     - é o cálculo de Número de verdadeiros positivos (TP) dividido pelo número total de verdadeiros positivos (TP) e falsos positivos (FP).
     - Um verdadeiro positivo é um resultado em que o modelo prevê corretamente a classe positiva. Da mesma forma, um verdadeiro negativo é um resultado em que o modelo corretamente prevê a classe negativo.
     - Um falso positivo é um resultado em que o modelo prevê incorretamente a classe positiva. E um falso negativo é um resultado em que o modelo prevê incorretamente a classe negativa.
@@ -44,12 +45,12 @@ https://huggingface.co/datasets/fernanda-dionello/autotrain-data-goodreads_witho
 ![image](https://user-images.githubusercontent.com/74319133/203144024-6cd49432-955b-4d86-a033-a7e2a326ce09.png)
 
 
-- Recall = O recall tenta responder à seguinte pergunta: "Qual proporção de positivos verdadeiros foi identificada corretamente?""
+- **Recall** = O recall tenta responder à seguinte pergunta: "Qual proporção de positivos verdadeiros foi identificada corretamente?""
     - é o cálculo de Número de verdadeiros positivos (TP) dividido pelo número total de verdadeiros positivos (TP) e falsos negativos (FN).
 
-- F1-Score = é a média harmônica de precision e recall.  A pontuação F1 varia entre 0 e 1. Quanto mais próximo de 1, melhor o modelo.
+- **F1-Score** = é a média harmônica de precision e recall. A pontuação F1 varia entre 0 e 1. Quanto mais próximo de 1, melhor o modelo.
 
 * No caso de classificação multiclasse, adotamos métodos de média para cálculo das pontuações, resultando em um conjunto de diferentes pontuações médias (macro, ponderada, micro) no relatório de classificação.
-    - Macro - Calcula a métrica para cada classe e calcula a média não ponderada
-    - Micro - Calcula a métrica globalmente contando o total de verdadeiros positivos, falsos negativos e falsos positivos (independentes das classes).
-    - Ponderada - Calcula a métrica para cada classe e usa a média ponderada com base no número de amostras por classe.
+    - **Macro** - Calcula a métrica para cada classe e calcula a média não ponderada
+    - **Micro** - Calcula a métrica globalmente contando o total de verdadeiros positivos, falsos negativos e falsos positivos (independentes das classes).
+    - **Ponderada** - Calcula a métrica para cada classe e usa a média ponderada com base no número de amostras por classe.
