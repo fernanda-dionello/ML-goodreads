@@ -33,6 +33,9 @@ Abordagem utilizada para classificação (Task): Text Classification (Multi-clas
     - Um verdadeiro positivo é um resultado em que o modelo prevê corretamente a classe positiva. Da mesma forma, um verdadeiro negativo é um resultado em que o modelo corretamente prevê a classe negativo.
     - Um falso positivo é um resultado em que o modelo prevê incorretamente a classe positiva. E um falso negativo é um resultado em que o modelo prevê incorretamente a classe negativa.
 
+![image](https://user-images.githubusercontent.com/74319133/203144024-6cd49432-955b-4d86-a033-a7e2a326ce09.png)
+
+
 - Recall = O recall tenta responder à seguinte pergunta: "Qual proporção de positivos verdadeiros foi identificada corretamente?""
     - é o cálculo de Número de verdadeiros positivos (TP) dividido pelo número total de verdadeiros positivos (TP) e falsos negativos (FN).
 
