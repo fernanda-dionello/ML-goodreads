@@ -19,13 +19,16 @@ A ML deverá predizer qual o rating (de 0 a 5) que um usuário vai fornecer para
 3. Após, no site, foi realizado o upload do arquivo csv de treinamento (goodreads_train_without_bookid.csv) com 2950 reviews para análise e foi escolhida a abordagem de Text Classification (Multi-class), sendo associada a coluna `rating` como sendo o target da IA e o `review_text` como o texto a ser analisado pela IA.
 4. O autoTrain dividiu o arquivo de treino numa proporção de 80% (2358 reviews) para dados de treino dos modelos (o qual ele utilizaria para treinar a ML que ele criaria) e 20% (592 reviews) para validação (ou seja, testar a eficácia dos modelos criados).
 5. No modelo gratuito, o autoTrain gerou os 5 modelos abaixo com os seguintes % de assertividade:
-//////colocar o print dos modelos
+
+<img width="1153" alt="image" src="https://user-images.githubusercontent.com/74319133/204113657-378bf2b2-4c14-42d6-a69c-2a8c61fe7d0a.png">
+
+
 6. Dessa forma, para cada um dos 5 modelos gerados, realizamos um teste de assertividade dos modelos através do código contido no arquivo main.py. O código criado executa o modelo que estamos passando para ele através de um link do Autrotrain, e tenta advinhar qual é o rating para cada review que está no arquivo (goodreads_test_without_bookid.csv), o qual contém 100 reviews. Depois que a ML gera os 100 resultados, é realizado uma comparação com os reais valores de rating desses reviews de teste que estão contidos no arquivo (goodreads_test_validation.csv). Por fim, conseguimos verificar o percentual de assertividade de cada modelo para o nosso arquivo de teste, apresentando os seguintes resultados:
-Modelo (#2171169884 - flowery-raccoon): 83%
-Modelo (#2171169881 - worse-caribou): 76%
-Modelo (#2171169880 - large-llama): 87%
-Modelo (#2171169882 - uneven-cobra): 66%
-Modelo (#2171169883 - hospitable-cormorant): 78%
+- Modelo (#2171169884 - flowery-raccoon): 83%
+- Modelo (#2171169881 - worse-caribou): 76%
+- Modelo (#2171169880 - large-llama): 87%
+- Modelo (#2171169882 - uneven-cobra): 66%
+- Modelo (#2171169883 - hospitable-cormorant): 78%
 7. Por fim, conseguimos concluir que o modelo que melhor performou para o arquivo de teste enviado foi o (#2171169880 - large-llama), embora o site Hugging Face tenha indicado inicialmente que o (#2171169884 - flowery-raccoon) teve maior assertividade nos treinamentos realizados na plataforma deles. Não é possível de fato concluir o porquê essa discordância ocorreu, mas nota-se que ambos modelos tiveram percentuais de assertividade muito próximos no site Autotrain.
 
 ## Refs:
