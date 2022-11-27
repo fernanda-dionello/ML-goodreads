@@ -23,7 +23,7 @@ class RatingClassificationDataset:
             text,
             max_length=512, 
             padding="max_length", 
-            truncation=True
+            truncation=True,
         )
 
         # O tokenizer retorna um dicionário com todos os argumentos necessários para que seu modelo correspondente
@@ -63,7 +63,13 @@ df = pd.read_csv("goodreads_test_without_bookid.csv")
 ## O método from_pretrained cria uma instância da classe AutoTokenizer a partir de um vocabulário de modelo pré-treinado que é passado por parâmetro.
 # Dessa forma, estamos passando o modelo que treinamos no site autotrain.
 
-model = AutoModelForSequenceClassification.from_pretrained("fernanda-dionello/autotrain-goodreads_without_bookid-2171169884")
+model = AutoModelForSequenceClassification.from_pretrained("fernanda-dionello/autotrain-goodreads_without_bookid-2171169883")
+
+# Link autotrain Modelo (#2171169884 - flowery-raccoon): fernanda-dionello/autotrain-goodreads_without_bookid-2171169884
+# Link autotrain Modelo (#2171169881 - worse-caribou): fernanda-dionello/autotrain-goodreads_without_bookid-2171169881
+# Link autotrain Modelo (#2171169880 - large-llama): fernanda-dionello/autotrain-goodreads_without_bookid-2171169880
+# Link autotrain Modelo (#2171169882 - uneven-cobra): fernanda-dionello/autotrain-goodreads_without_bookid-2171169882
+# Link autotrain Modelo (#2171169883 - hospitable-cormorant) fernanda-dionello/autotrain-goodreads_without_bookid-2171169883
 
 ## AutoTokenizer é uma classe tokenizer genérica que é instanciada ao ser chamada pelo método de classe [AutoTokenizer.from_pretrained].
 
@@ -73,7 +79,7 @@ model = AutoModelForSequenceClassification.from_pretrained("fernanda-dionello/au
 # além disso, possui métodos específicos para mapeamento de strings e caracteres, sendo o ideal para o nosso caso em
 # que utilizamos classificação por texto.
 
-tokenizer = AutoTokenizer.from_pretrained("fernanda-dionello/autotrain-goodreads_without_bookid-2171169884", use_fast=True) 
+tokenizer = AutoTokenizer.from_pretrained("fernanda-dionello/autotrain-goodreads_without_bookid-2171169883", use_fast=True) 
 
 # estamos adicionando o valor 0 na coluna rating para todos os nossos dados de testes iniciais no DataFrame
 df.loc[:, "rating"] = 0

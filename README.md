@@ -1,16 +1,32 @@
 # ML-goodreads
 
+## O problema:
+A ML deverá predizer qual o rating (de 0 a 5) que um usuário vai fornecer para um livro com base no review que o mesmo escreveu para a leitura na plataforma GoodReads.
+
 - **Abordagem utilizada: NLP - Natural Language processing**
   - O processamento de linguagem natural (NLP) é um ramo da inteligência artificial (IA) que permite aos computadores compreender, gerar e manipular a linguagem humana. O processamento de linguagem natural tem a capacidade de interrogar os dados com texto ou voz de linguagem natural. Isso também é chamado de "entrada de linguagem".  
 - **Abordagem no site Autotrain (Hugging Face Hub) para classificação (Task): Text Classification (Multi-class)**
   - Multi-class text classification é uma tarefa de classificação de texto com mais de duas classes/categorias. Cada amostra de dados pode ser classificada em uma das classes. No entanto, uma amostra de dados não pode pertencer a mais de uma classe simultaneamente
 - **Libraries utilizadas: Transformers, Tokenizers, Pytorch, Numpy and Pandas**
-- **Informações sobre como ocorre o tratamento do dataset de test no Autotrain:**
-  - https://huggingface.co/docs/transformers/tasks/sequence_classification
-  - https://huggingface.co/tasks/text-classification
-  - https://huggingface.co/course/chapter3/2?fw=pt
-  - https://huggingface.co/course/chapter3/3?fw=pt
 
+## Resolução do problema (Etapas efetuadas):
+1. Escolhemos o site Hugging Face que possui o serviço chamado Autotrain, o qual possibilita criar modelos de IA de forma gratuita (com limite de 5 modelos por projeto)
+2. Antes de iniciar a criação dos modelos, no arquivo de treinamento (goodreads_train_without_bookid.csv) foram realizadas as seguintes tratativas:
+    - Deleção de todas colunas, exceto as de `rating` e `review_text`.
+        - `rating`: é a classificação que o usuário forneceu para o livro em que o valor pode variar de 0 a 5;
+        - `review_text`: é o texto/review que o usuário escreveu sobre o livro
+    - Remoção das seguintes pontuações dos reviews: ', "", ~
+3. Após, no site, foi realizado o upload do arquivo csv de treinamento (goodreads_train_without_bookid.csv) com 2950 reviews para análise e foi escolhida a abordagem de Text Classification (Multi-class), sendo associada a coluna `rating` como sendo o target da IA e o `review_text` como o texto a ser analisado pela IA.
+4. O autoTrain dividiu o arquivo de treino numa proporção de 80% (2358 reviews) para dados de treino dos modelos (o qual ele utilizaria para treinar a ML que ele criaria) e 20% (592 reviews) para validação (ou seja, testar a eficácia dos modelos criados).
+5. No modelo gratuito, o autoTrain gerou os 5 modelos abaixo com os seguintes % de assertividade:
+//////colocar o print dos modelos
+6. Dessa forma, para cada um dos 5 modelos gerados, realizamos um teste de assertividade dos modelos através do código contido no arquivo main.py. O código criado executa o modelo que estamos passando para ele através de um link do Autrotrain, e tenta advinhar qual é o rating para cada review que está no arquivo (goodreads_test_without_bookid.csv), o qual contém 100 reviews. Depois que a ML gera os 100 resultados, é realizado uma comparação com os reais valores de rating desses reviews de teste que estão contidos no arquivo (goodreads_test_validation.csv). Por fim, conseguimos verificar o percentual de assertividade de cada modelo para o nosso arquivo de teste, apresentando os seguintes resultados:
+Modelo (#2171169884 - flowery-raccoon): 83%
+Modelo (#2171169881 - worse-caribou): 76%
+Modelo (#2171169880 - large-llama): 87%
+Modelo (#2171169882 - uneven-cobra): 66%
+Modelo (#2171169883 - hospitable-cormorant): 78%
+7. Por fim, conseguimos concluir que o modelo que melhor performou para o arquivo de teste enviado foi o (#2171169880 - large-llama), embora o site Hugging Face tenha indicado inicialmente que o (#2171169884 - flowery-raccoon) teve maior assertividade nos treinamentos realizados na plataforma deles. Não é possível de fato concluir o porquê essa discordância ocorreu, mas nota-se que ambos modelos tiveram percentuais de assertividade muito próximos no site Autotrain.
 
 ## Refs:
  - https://huggingface.co/docs/transformers/model_doc/auto
@@ -21,6 +37,10 @@
  - https://ui.autotrain.huggingface.co/21711/trainings
  - https://huggingface.co/fernanda-dionello/autotrain-goodreads_without_bookid-2171169884?text=I+love+AutoTrain+%F0%9F%A4%97
  - https://developers.google.com/machine-learning/crash-course/classification/video-lecture
+ - https://huggingface.co/docs/transformers/tasks/sequence_classification
+ - https://huggingface.co/tasks/text-classification
+ - https://huggingface.co/course/chapter3/2?fw=pt
+ - https://huggingface.co/course/chapter3/3?fw=pt
 
 
 **Link Dataset via Autotrain:**
